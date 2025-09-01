@@ -13,7 +13,7 @@ const app = express();
 // Allow requests from localhost (dev) and deployed frontend
 const allowedOrigins = [
   "http://localhost:3000",             // React dev server
-  "https://your-frontend.vercel.app"   // replace with your live frontend URL
+  "https://comicvini.onrender.com"   // replace with your live frontend URL
 ];
 
 app.use(cors({
