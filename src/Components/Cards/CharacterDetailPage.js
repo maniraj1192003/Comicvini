@@ -13,7 +13,7 @@ const CharacterDetailPage = () => {
       try {
       
         
-const response = await axios.get(`http://localhost:5000/api/character/4005-${id}`);
+const response = await axios.get(`https://comicvinibackend.onrender.com/api/character/4005-${id}`);
 setCharacter(response.data.results);
 
       } catch (error) {

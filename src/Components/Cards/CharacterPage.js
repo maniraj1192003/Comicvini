@@ -130,12 +130,12 @@ const url = `https://comicvinibackend.onrender.com/api/characters?${params}`;
               <div className="card-body">
                 <h5 className="card-title text-warning">{character.name}</h5>
                 <p className="card-text">{character.deck || "No description available"}</p>
-                <Link
+                {/* <Link
                   to={`/character/${character.id}`}
                   className="btn btn-warning"
                 >
                   View Details
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
