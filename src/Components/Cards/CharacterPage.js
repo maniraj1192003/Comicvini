@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "./config";
+
 
 const CharactersPage = () => {
   const [characters, setCharacters] = useState([]);
@@ -27,7 +29,7 @@ const CharactersPage = () => {
         offset: (pageNumber - 1) * limit,
       }).toString();
 
-      const url = `http://localhost:5000/api/characters?${params}`;
+const url = `${BASE_URL}/api/characters?${params}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch characters");
       const data = await response.json();

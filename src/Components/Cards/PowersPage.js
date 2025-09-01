@@ -11,7 +11,7 @@ const PowersPage = () => {
     try {
       setLoading(true);
       const query = filterValue ? `?name=${filterValue}` : "";
-      const res = await fetch(`http://localhost:5000/api/powers${query}`);
+      const res = await fetch(`https://comicvinibackend.onrender.com/api/powers${query}`);
       const data = await res.json();
       setPowers(data.results || []);
     } catch (error) {

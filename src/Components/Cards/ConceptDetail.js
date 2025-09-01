@@ -9,7 +9,7 @@ const ConceptDetail = () => {
   useEffect(() => {
     const fetchConcept = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/concept/${id}`);
+        const res = await fetch(`https://comicvinibackend.onrender.com/api/concept/${id}`);
         const data = await res.json();
         setConcept(data.results); 
       } catch (err) {

@@ -17,7 +17,7 @@ export default function SearchResultsPage() {
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:5000/api/search?query=${encodeURIComponent(
+          `https://comicvinibackend.onrender.com/api/search?query=${encodeURIComponent(
             query
           )}&resources=${resources}`
         );

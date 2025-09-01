@@ -14,7 +14,7 @@ const MoviesPage = () => {
   const fetchMovies = async () => {
     try {
       const params = new URLSearchParams(filters);
-      const response = await fetch(`http://localhost:5000/api/movies?${params}`);
+      const response = await fetch(`https://comicvinibackend.onrender.com/api/movies?${params}`);
       const data = await response.json();
       setMovies(data.results || []);
     } catch (err) {

@@ -14,7 +14,7 @@ const ConceptsPage = () => {
     setLoading(true);
     try {
       const params = new URLSearchParams(filters).toString();
-      const url = `http://localhost:5000/api/concepts?${params}`;
+      const url = `https://comicvinibackend.onrender.com/api/concepts?${params}`;
       const response = await fetch(url);
       const data = await response.json();
 

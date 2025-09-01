@@ -9,7 +9,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const loadMovie = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/movie/${id}`);
+        const response = await fetch(`https://comicvinibackend.onrender.com/api/movie/${id}`);
         const data = await response.json();
         setMovie(data.results); // now works correctly
       } catch (error) {
