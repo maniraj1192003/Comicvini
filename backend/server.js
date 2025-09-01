@@ -7,13 +7,10 @@ dotenv.config();
 
 const app = express();
 
-// -------------------
-// CORS Configuration
-// -------------------
-// Allow requests from localhost (dev) and deployed frontend
+
 const allowedOrigins = [
-  "http://localhost:3000",             // React dev server
-  "https://comicvini.onrender.com"   // replace with your live frontend URL
+  "http://localhost:3000",             
+  "https://comicvini.onrender.com"   
 ];
 
 app.use(cors({
@@ -28,15 +25,11 @@ app.use(cors({
   }
 }));
 
-// -------------------
-// Environment variables
-// -------------------
+
 const API_KEY = process.env.API_KEY;  // set this in your .env locally or in Render/Heroku
 const BASE_URL = "https://comicvine.gamespot.com/api";
 
-// -------------------
-// Movies endpoint
-// -------------------
+
 app.get("/api/movies", async (req, res) => {
   try {
     const { name, studio, rating } = req.query;
@@ -68,9 +61,7 @@ app.get("/api/movies", async (req, res) => {
   }
 });
 
-// -------------------
-// Search endpoint
-// -------------------
+
 app.get("/api/search", async (req, res) => {
   const { query, resources } = req.query;
   if (!query) return res.status(400).json({ error: "Query is required" });
@@ -91,9 +82,7 @@ app.get("/api/search", async (req, res) => {
   }
 });
 
-// -------------------
-// Powers endpoint
-// -------------------
+
 app.get("/api/powers", async (req, res) => {
   try {
     const { name, page = 1 } = req.query;
@@ -114,9 +103,7 @@ app.get("/api/powers", async (req, res) => {
   }
 });
 
-// -------------------
-// Concepts endpoint
-// -------------------
+
 app.get("/api/concepts", async (req, res) => {
   try {
     const { name, sortOrder = "asc" } = req.query;
@@ -142,9 +129,6 @@ app.get("/api/concepts", async (req, res) => {
   }
 });
 
-// -------------------
-// Characters endpoint
-// -------------------
 app.get("/api/characters", async (req, res) => {
   try {
     let { name = "", gender = "", limit = 100, offset = 0, sort = "name:asc" } = req.query;
@@ -175,8 +159,6 @@ app.get("/api/characters", async (req, res) => {
   }
 });
 
-// -------------------
-// Start server
-// -------------------
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
